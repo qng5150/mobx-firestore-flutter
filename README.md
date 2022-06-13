@@ -1,16 +1,22 @@
 # mobx_firestore_flutter
 
-Integrating MobStores With Flutter
+Integrating MobStores With Firestore
 
-## Getting Started
+## Setup
+Android setup has been set to do the following:
+- android/app/build.gradle
 
-This project is a starting point for a Flutter application.
+```groovy
+// added the following
+defaultConfig {
+    minSdkVersion 32
+    targetSdkVersion 32
+}
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // added the following
+    implementation "androidx.multidex:multidex:2.0.1"
+}
+```
+Both are required for firestore
