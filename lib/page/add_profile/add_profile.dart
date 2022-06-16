@@ -35,54 +35,56 @@ class _AddProfileState extends State<AddProfile> {
         padding: const EdgeInsets.all(20.0),
         child: Form(
           key: _formKey,
-          child: Column(
-            children: [
-              Text('Add A Profile',
-                  style: Theme.of(context).textTheme.headlineMedium),
-              const SizedBox(height: 32),
-              ListTile(
-                subtitle: TextFormField(
-                  controller: profileNameController,
-                  focusNode: profileFocus,
-                  textInputAction: TextInputAction.next,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Profile Name',
-                    errorText: profileError,
-                    errorMaxLines: 3,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Text('Add A Profile',
+                    style: Theme.of(context).textTheme.headlineMedium),
+                const SizedBox(height: 32),
+                ListTile(
+                  subtitle: TextFormField(
+                    controller: profileNameController,
+                    focusNode: profileFocus,
+                    textInputAction: TextInputAction.next,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                    },
+                    decoration: InputDecoration(
+                      labelText: 'Profile Name',
+                      errorText: profileError,
+                      errorMaxLines: 3,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 32),
-              ListTile(
-                subtitle: TextFormField(
-                  controller: imageUrlController,
-                  textInputAction: TextInputAction.next,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter some text';
-                    }
-                    if (!Uri.parse(value).isAbsolute) {
-                      return "Not a valid url";
-                    }
-                  },
-                  decoration: InputDecoration(
-                    labelText: 'Image Url',
-                    errorText: imageUrlError,
-                    errorMaxLines: 3,
+                const SizedBox(height: 32),
+                ListTile(
+                  subtitle: TextFormField(
+                    controller: imageUrlController,
+                    textInputAction: TextInputAction.next,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      if (!Uri.parse(value).isAbsolute) {
+                        return "Not a valid url";
+                      }
+                    },
+                    decoration: InputDecoration(
+                      labelText: 'Image Url',
+                      errorText: imageUrlError,
+                      errorMaxLines: 3,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 32),
-              ElevatedButton(
-                onPressed: () => context.go('/'),
-                child: const Text('Add'),
-              ),
-            ],
+                const SizedBox(height: 32),
+                ElevatedButton(
+                  onPressed: () => context.go('/'),
+                  child: const Text('Add'),
+                ),
+              ],
+            ),
           ),
         ),
       ),
