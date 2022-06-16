@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mobx_firestore_flutter/model/player_profile.dart';
+import 'package:mobx_firestore_flutter/widgets/profile_tile.dart';
 
 class ProfilePage extends StatefulWidget {
   ProfilePage({Key? key}) : super(key: key);
@@ -34,7 +36,13 @@ class _ProfilePageState extends State<ProfilePage> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
-          children: [],
+          children: const [
+            ProfileTile(
+              imageUrl:
+                  'https://images.unsplash.com/photo-1635863138275-d9b33299680b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2231&q=80x',
+              profileName: 'Iron Man',
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
