@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobx_firestore_flutter/model/player_profile.dart';
 
 class ProfileTile extends StatelessWidget {
   const ProfileTile(
