@@ -31,16 +31,15 @@ class _ProfilePageState extends State<ProfilePage> {
         // the App.build method, and use it to set our appbar title.
         title: const Text('Profile Page'),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
           children: const [
             ProfileTile(
-              imageUrl:
-                  'https://images.unsplash.com/photo-1635863138275-d9b33299680b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2231&q=80x',
-              profileName: 'Iron Man',
+              imageUrl: 'https://picsum.photos/100/100',
+              profileName: 'Player 1',
             ),
           ],
         ),
