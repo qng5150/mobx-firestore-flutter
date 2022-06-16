@@ -13,7 +13,12 @@ class ProfileTile extends StatelessWidget {
     return ListTile(
       title:
           Text(profileName, style: Theme.of(context).textTheme.headlineMedium),
-      subtitle: imageUrl.isNotEmpty ? Image.network(imageUrl) : Container(),
+      subtitle: imageUrl.isNotEmpty
+          ? Image.network(
+              imageUrl,
+              height: 100,
+            )
+          : Container(),
     );
   }
 }
